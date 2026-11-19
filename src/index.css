@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-main: #FFFFFF;
+  --color-estudios: #39FF14;   /* Verde fosforito real */
+  --color-deporte: #FF5F1F;    /* Naranja fosforito real */
+  --color-grupo: #FF10F0;      /* Rosa fosforito real */
+  --bg-creativa: #000000;      /* Negro puro para Creativa */
+  --accent-creativa: #39FF14;  /* Acento fosforito configurable */
+}
+
+@layer base {
+  html,
+  body {
+    font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+    overscroll-behavior-y: none;
+    -webkit-tap-highlight-color: transparent;
+    background-color: #FFFFFF;
+    color: #000000;
+  }
+
+  /* Evita auto-zoom en iOS Safari */
+  input,
+  textarea,
+  select {
+    font-size: 16px !important;
+  }
+}
+
+.font-mono-brutal {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Safe Areas iOS */
+.pt-safe {
+  padding-top: max(0.85rem, env(safe-area-inset-top));
+}
+
+.pb-safe {
+  padding-bottom: max(0.65rem, env(safe-area-inset-bottom));
+}
+
+.pb-nav-safe {
+  padding-bottom: calc(5.5rem + env(safe-area-inset-bottom));
+}
+
+@media (min-width: 768px) {
+  .pb-nav-safe {
+    padding-bottom: 2.5rem;
+  }
+}
+
+/* Primitivas Neo-Brutalistas */
+.neo-box {
+  border: 2px solid #000000;
+  box-shadow: 4px 4px 0px #000000;
+}
+
+.neo-box-dark {
+  border: 2px solid #FFFFFF;
+  box-shadow: 4px 4px 0px var(--accent-creativa);
+}
+
+.neo-press {
+  transition: transform 0.08s ease, box-shadow 0.08s ease;
+}
+
+.neo-press:active {
+  transform: translate(3px, 3px);
+  box-shadow: 0px 0px 0px #000000;
+}
+
+/* React Flow sobre fondo negro (#000000) */
+.react-flow__handle {
+  width: 16px !important;
+  height: 16px !important;
+  background: var(--accent-creativa) !important;
+  border: 2px solid #000000 !important;
+}
+
+.react-flow__edge-path {
+  stroke: #FFFFFF !important;
+  stroke-width: 3px !important;
+}
+
+.react-flow__controls button {
+  background: #FFFFFF !important;
+  border: 2px solid #000000 !important;
+  color: #000000 !important;
+}
