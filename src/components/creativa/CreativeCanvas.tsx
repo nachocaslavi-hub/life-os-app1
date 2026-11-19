@@ -347,10 +347,7 @@ export const CreativeCanvas: React.FC<CanvasProps> = ({
     });
   };
 
-  const handleNodeDragStop = async (
-    _event: React.MouseEvent | React.TouchEvent,
-    node: Node
-  ) => {
+  const handleNodeDragStop = async (_event: any, node: Node) => {
     await supabase
       .from('creative_nodes')
       .update({ pos_x: node.position.x, pos_y: node.position.y })
